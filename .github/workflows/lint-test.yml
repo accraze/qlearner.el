@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get install emacs
 
     - name: Lint check with checkdoc
-      run: emacs -Q --batch -l q-learning.el -f checkdoc
+      run: emacs -Q --batch -l qlearner.el -f checkdoc
 
     - name: Run tests with ERT
-      run: emacs -Q --batch -l q-learning-test.el -f ert-run-tests-batch-and-exit
+      run: emacs -Q --batch -l qlearner-test.el -f ert-run-tests-batch-and-exit
