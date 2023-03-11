@@ -1,3 +1,9 @@
+;; Load the file containing the functions to test
+(load-file "qlearner.el")
+
+;; Require the package being tested
+(require 'qlearner)
+
 (require 'cl-lib)
 
 ;; Define a mock environment function that returns a fixed transition for each action
@@ -7,7 +13,7 @@
 
 ;; Define a test for the argmax function
 (ert-deftest test-argmax ()
-  (should (equal (argmax [1 2 3 4 5]) 4))
+  (Should (equal (argmax [1 2 3 4 5]) 4))
   (should (equal (argmax [5 4 3 2 1]) 0))
   (should (equal (argmax [3 3 3 3 3]) 0)))
 

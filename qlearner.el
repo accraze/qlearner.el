@@ -1,3 +1,38 @@
+;;; qlearner.el --- Implementation of a Q-learning agent in Elisp
+;;;
+;;; Author: accraze
+;;; Version: 0.1
+;;; Package-Requires: ((emacs "24.1"))
+;;; Keywords: q-learning reinforcement-learning machine-learning
+;;; URL: [your package's URL]
+;;;
+;;; This file is not part of GNU Emacs.
+;;;
+;;; License:
+;;; [your package's license]
+;;;
+;;; Commentary:
+;;;
+;;; This package provides a simple implementation of a Q-learning agent in Elisp.
+;;; The `q-learning.el` file contains the implementation of the Q-learning algorithm,
+;;; while `q-learning-test.el` contains unit tests for the implementation.
+;;;
+;;; To use this package, add the following lines to your `.emacs` file:
+;;;
+;;;     (require 'qlearner)
+;;;
+;;; Then, you can use the `train-q-learning-agent` function to train a Q-learning agent
+;;; on a given environment.
+
+;; Define the package name and version
+(define-package "qlearner" "0.1"
+  "Implementation of a Q-learning agent in Elisp"
+  '((emacs "24.1")))
+
+;; Provide the package
+(provide 'qlearner)
+
+
 (defun argmax (lst)
   "Return the index of the maximum value in LST."
   (let ((max-val (apply #'max lst)))
