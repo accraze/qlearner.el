@@ -23,15 +23,9 @@
 ;;;
 ;;; Then, you can use the `train-q-learning-agent` function to train a Q-learning agent
 ;;; on a given environment.
+;;;
 
-;; Define the package name and version
-(define-package "qlearner" "0.1"
-  "Implementation of a Q-learning agent in Elisp"
-  '((emacs "24.1")))
-
-;; Provide the package
-(provide 'qlearner)
-
+;;; Code
 
 (defun argmax (lst)
   "Return the index of the maximum value in LST."
@@ -80,3 +74,7 @@
   (let ((q-values (make-vector num-actions (make-vector (plist-get env :observation-space) 0.0))))
     (dotimes (episode max-episodes q-values)
       (setq q-values (run-episode q-values env num-actions learning-rate discount-factor epsilon max-steps)))))
+
+;; Provide the package
+(provide 'qlearner)
+;;; qlearner.el ends here
